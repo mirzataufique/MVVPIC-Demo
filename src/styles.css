@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import 'ngx-toastr/toastr'; */
+
+/* global styling for sticky footer*/
+html,
+body,
+app-root {
+  height: 100%;
+}
+
+body {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+.hambegr-container {
+  text-align: -webkit-right;
+}
+
+.nav-hamberg-icon {
+  height: 75%;
+  width: 50%;
+}
+
+.nav-icon {
+  height: 7%;
+  width: 50%;
+  color: orange;
+}
+
+.footer-container {
+  height: 24px;
+  /* margin-top: -36px; */
+}
+
+.footer-content {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* lineup class and keyframes */
+.lineUpWhite {
+  animation: 3s anim-lineUp ease-out infinite;
+  color: white;
+  font-size: 40px;
+}
+
+.lineUp {
+  animation: 2s anim-lineUp ease-out infinite;
+  color: orange;
+  font-size: 40px;
+}
+
+@keyframes anim-lineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

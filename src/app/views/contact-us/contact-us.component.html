@@ -1,0 +1,64 @@
+<div class="container">
+    <form [formGroup]="questionForm">
+        <div class="row line questionFormHeader">
+            <h1 class="lineUpWhite">Contact Us</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <img class="d-block w-100 h-100" src="/assets/images/contact-us.jpg" alt="contact-us">
+            </div>
+            <div class="col-sm-8">
+                <img class="d-block w-100 h-100" src="/assets/images/map.jpg" alt="contact-us">
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class="row line questionFormHeader">
+            <h2 class="lineUpWhite"> Questions? Send us a message!</h2>
+        </div>
+        <div class="row questionFormContaner">
+            <div class="col-sm-6 form-group">
+                <div class="col-sm-12">
+                    <label for="name" class="col-sm- col-form-label"></label>
+                    <input type="text" formControlName="name" class="form-control" name="name" placeholder="Name"
+                        required>
+                </div>
+                <div class="col-sm-12">
+                    <label for="email" class="col-sm- col-form-label"></label>
+                    <input type="email" formControlName="email" class="form-control" name="email" placeholder="Email"
+                        required>
+                </div>
+                <div class="col-sm-12">
+                    <label for="subject" class="col-sm- col-form-label"></label>
+                    <input type="text" formControlName="subject" class="form-control" name="subject"
+                        placeholder="Subject" required>
+                </div>
+                <div class="col-sm-12">
+                    <label for="mobile_numer" class="col-sm- col-form-label"></label>
+                    <input type="text" class="form-control" formControlName="mobile" name="mobile_numer"
+                        placeholder="Mobile Numer" required>
+                </div>
+                <div class="col-sm-2 signup form-group onWeb">
+                    <label for="mobile_numer" class="col-sm-12 col-form-label"></label>
+                    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6 form-group">
+                <div class="col-sm-12">
+                    <label for="Message" class="col-sm- col-form-label"></label>
+                    <textarea class="form-control" formControlName="message" name="Message" id="" cols="20" rows="10"
+                        placeholder="Message"></textarea>
+                </div>
+                <div class="col-sm-2 signup form-group onMobile">
+                    <label for="mobile_numer" class="col-sm-12 col-form-label"></label>
+                    <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <br>
+</div>

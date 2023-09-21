@@ -1,0 +1,132 @@
+<div class="container">
+    <h4>Admission Form</h4>
+    <!-- <hr style="border-top: 1.5px solid #eee;"> -->
+
+    <hr style="border-top: 1.5px solid #eee; width:98%;">
+
+    <!-- first row -->
+    <form method="POST" [formGroup]="addmissionForm">
+        <!-- {{admissionForm.value | json}} -->
+        <!-- <div *ngIf="successMsg" class="alert alert-success">
+            <strong>{{msg}}</strong> Data Successfuly saved..!
+        </div> -->
+        <div *ngIf="successMsg" class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>{{msg}}</strong> Data Successfuly saved.
+          </div>
+          <div *ngIf="errorMsg" class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>{{msg}}</strong> Failed
+          </div>
+       
+        <div class="row">
+            <div id="fileds" class="col-sm-6 form-group">
+                <label for="std_name" class="col-sm-8 col-form-label">*Student Name</label>
+                <div class="col-sm-12">
+                    <input formControlName="std_name" type="text" class="form-control"  name="std_name"
+                        placeholder="Enter the full name" required>
+                    <!-- <span class="text-danger"
+                        *ngIf="(addmissionForm.value.touched || addmissionForm.submitted) && std_name.errors?.required">
+                        Name is required
+                    </span> -->
+                </div>
+            </div>
+            <div id="fileds" class="col-sm-6 form-group">
+                <label for="Fathers Name" class="col-sm-8 col-form-label">*Father's Name</label>
+                <div class="col-sm-12">
+                    <input formControlName="std_father" type="text" class="form-control"  name="std_father"
+                        placeholder="Enter the Father Name" required>
+                    <!-- <span class="text-danger"
+                        *ngIf="(std_father.touched || admissionForm.submitted) && std_father.errors?.required">
+                        Father's name is required
+                    </span> -->
+                </div>
+            </div>
+
+        </div>
+        <!-- second row -->
+        <div class="row">
+            <div id="fileds" class="col-sm-6 form-group">
+                <label for="Fathers Name" class="col-sm-8 col-form-label">*Mother's Name</label>
+                <div class="col-sm-12">
+                    <input formControlName="std_mother" type="text" class="form-control"  name="std_mother"
+                        placeholder="Enter the Mother Name"  required>
+                    <!-- <span class="text-danger"
+                        *ngIf="(std_mother.touched || admissionForm.submitted) && std_mother.errors?.required">
+                        Mother's name is required
+                    </span> -->
+                </div>
+            </div>
+            <div id="fileds" class="col-sm-6 form-group">
+                <label for="From_date" class="col-sm-12 col-form-label">*Date of Birth</label>
+                <div class="col-sm-12">
+                    <input formControlName="std_dob" type="date" id="select_date" class="form-control" name="std_dob"
+                        placeholder=" Date of Birth" required>
+                    <!-- <span class="text-danger" *ngIf="(std_dob.touched || admissionForm.submitted) && std_dob.errors?.required">
+                        Date of birth is required
+                    </span> -->
+                </div>
+                <!-- {{std_dob}} -->
+            </div>
+
+        </div>
+        <!-- 3rd row -->
+
+        <div class="row">
+            <div id="fileds" class="col-sm-6 form-group">
+                <label for="Department" class="col-sm-12 col-form-label">*Select Department</label>
+                <div class="col-sm-12">
+                    <select formControlName="std_department" class="form-control" name="std_department"
+                       required>
+                        <option>Select</option>
+                        <option>BSc</option>
+                        <option>Commerce</option>
+                        <option>Arts</option>
+                    </select>
+                    <!-- <span class="text-danger"
+                        *ngIf="(std_department.touched || admissionForm.submitted) && std_department.errors?.required">
+                        Department is required
+                    </span> -->
+                </div>
+                <!-- {{std_department}} -->
+            </div>
+            <div id="fileds" class="col-sm-6 form-group">
+                <label for="EMT_Id" class="col-sm-12 col-form-label">*Mobile Number</label>
+                <div class="col-sm-12">
+                    <input formControlName="std_mobile" type="text" class="form-control" id="EMT_Id"
+                        placeholder="Enter the Mobile Number" name="std_mobile"  required>
+                    <!-- <span class="text-danger"
+                        *ngIf="(std_mobile.touched || admissionForm.submitted) && std_mobile.errors?.required">
+                        Mobile number is required
+                    </span> -->
+                </div>
+                <!-- {{std_mobile}} -->
+            </div>
+            <div id="fileds" class="col-sm-6 form-group">
+                <label for="EMT_Id" class="col-sm-12 col-form-label">*Address</label>
+                <div class="col-sm-12">
+                    <input formControlName="std_address" type="text" class="form-control" placeholder="Enter the Address"
+                        name="std_address"  required>
+                    <!-- <span class="text-danger"
+                        *ngIf="(std_address.touched || admissionForm.submitted) && std_address.errors?.required">
+                        Address is required
+                    </span> -->
+                </div>
+            </div>
+            <!-- 4th row -->
+            <div id="fileds" class="col-sm-6 form-group">
+                <label for="EMT_Id" class="col-sm-8 col-form-label">Email</label>
+                <div class="col-sm-12">
+                    <input formControlName="std_email" type="text" class="form-control" placeholder="Enter the Email"
+                        name="std_email">
+                </div>
+            </div>
+            <div class="btnColl col-sm-6 form-group">
+                <div class="col-sm-12">
+                    <button class="btn btn-primary" [disabled]="!addmissionForm.valid"
+                        (click)="onSubmit()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

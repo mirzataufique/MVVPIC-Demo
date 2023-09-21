@@ -1,0 +1,35 @@
+<!-- <div class="row imgcontainer">
+  <h3 style="background-color: #213d77; text-align: center; color: white;">Image Galary</h3>
+  <div class="col-sm-12 gallery" *ngFor="let image of images; let i=index">
+    <img src="{{image.img}}" (click)="openImage($event)" class="modal-hover-opacity"
+      style="max-width:100%;cursor:pointer" data-toggle="modal" data-target=".bd-example-modal-lg" />
+  </div>
+</div> -->
+<div class="image-galary-container">
+  <div class="row line questionFormHeader">
+    <h2 class="lineUpWhite"> Welcome Image Galary, Let's have a look of MVVPIC glimpse!</h2>
+  </div>
+  <div class="row">
+    
+    <div class="column" *ngFor="let src of images; let i=index">
+      <img src={{src.img}} alt="Snow" (click)="openImage($event,src)" style="width:100%; cursor: pointer;"
+        data-toggle="modal" data-target=".bd-example-modal-lg" />
+    </div>
+  </div>
+  
+  <div class="modal fade bd-example-modal-lg" tabindex="" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>{{imgDescription}}</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <img src={{imgSrc}} class="image-data" />
+      </div>
+    </div>
+  
+  </div>
+</div>

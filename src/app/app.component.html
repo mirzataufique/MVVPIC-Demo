@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        // Prevent dropdown menu from closing when click inside the form
+        $(document).on("click", ".navbar-right .dropdown-menu", function (e) {
+            e.stopPropagation();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="fixed-header">
+        <nav class="navbar navbar-default navbar-expand-lg">
+            <div class="navbar-header d-flex col">
+                <a class="waviy navbar-brand">
+                    <span style="--i:1">M</span>
+                    <span style="--i:2">V</span>
+                    <span style="--i:3">V</span>
+                    <span style="--i:4">P</span>
+                    <span style="--i:5">I</span>
+
+                    <span style="--i:6"></span>
+                    <span style="--i:7">C</span>
+                    <span style="--i:8">O</span>
+                    <span style="--i:9">L</span>
+                    <span style="--i:10">L</span>
+                    <span style="--i:11">E</span>
+                    <span style="--i:12">G</span>
+                    <span style="--i:13">E</span>
+                </a>
+
+
+                <!-- <a class="navbar-brand" routerLink="/home">MVVPI<b>COLLEGE</b></a> -->
+                <button type="button" data-target="#navbarCollapse" data-toggle="collapse"
+                    class="navbar-toggle navbar-toggler custom-toggler ml-auto">
+                    <!-- <span class="navbar-toggler-icon"></span> -->
+                    <span class="hambegr-container"><img src="/assets/icons/icons8-menu.svg" alt="hamberg-icon"
+                            class="nav-hamberg-icon"></span>
+                </button>
+            </div>
+
+            <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a routerLinkActive="active" routerLink="/home" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">ABOUT<b
+                                class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a routerLink="/about-college" class="dropdown-item">About College</a></li>
+                            <li><a class="dropdown-item" routerLink="/about-staff">About Staff </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a routerLinkActive="active" routerLink="/academics"
+                            class="nav-link">ACADEMICS</a>
+                    </li>
+                    <li class="nav-item"><a routerLinkActive="active" routerLink="/gallery"
+                            class="nav-link">ACTIVITIES</a>
+                    </li>
+                    <li class="nav-item"><a routerLinkActive="active" routerLink="/contact-us" class="nav-link">CONTACT
+                            US</a>
+                    </li>
+
+                    <li class="nav-item dropdown" *ngIf="adminMenus === true">
+                        <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="">MANAGE<b
+                                class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a routerLink="/admin/admission" routerLinkActive="active" class="dropdown-item">New
+                                    Admission</a>
+                            </li>
+                            <li><a class="dropdown-item" routerLink="/faculty" routerLinkActive="active">Faculty</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" *ngIf="adminMenus === true">
+                        <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">REPORTS<b
+                                class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a routerLink="/admin/report" class="dropdown-item">Student Report</a></li>
+                            <li><a class="dropdown-item" routerLink="/admin/fcltreport">Faculty Report</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" *ngIf="adminMenus === true">
+                        <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="">ADMISSION & EXAMS<b
+                                class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a routerLink="/admin/admission" routerLinkActive="active"
+                                    class="dropdown-item">Admission</a>
+                            </li>
+                            <li><a class="dropdown-item">Exams</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <!-- <form class="navbar-form form-inline">
+                    <div class="input-group search-box">
+                        <input type="text" id="search" class="form-control" placeholder="Search here..."> </div>
+                </form> -->
+
+                <ul class="nav navbar-nav navbar-right ml-auto" *ngIf="HideLoginBtn">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-primary" routerLink="/admin/login"
+                            data-target="#exampleModalLong">
+                            LOGIN
+                        </button>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right ml-auto">
+                </ul>
+                <ul class="nav navbar-nav navbar-right ml-auto" *ngIf="loginProfile">
+                    <span style="color: white; color: white; margin-top: 15px; font-size: 12px;">
+                        {{currentDateTime | date: "HH:mm:ss"}}
+                    </span>
+                    <li class="nav-item"> <button type="button" class="logedButton" data-toggle="modal"
+                            data-target="#UserDetails">
+                            <!-- <img style="border-radius: 3rem;height: 40px;width: auto;" src="{{ user?.photoUrl }}"> -->
+                        </button>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right ml-auto">
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div>
+    </div>
+
+
+
+    <!-- Login Details Model------------------------------------------ -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="UserDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Last Login : {{currentDateTime | date: "HH:mm:ss"}}
+                    <img style="border-radius: 3rem;height: 40px;width: auto;" src={{logedinUserDetails?.photoUrl}}>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+                <div class="modal-body">
+                    <!-- <img style="border-radius: 3rem;height: 40px;width: auto;" src="{{ user?.photoUrl }}">
+          <h4 class="modal-title" id="exampleModalLongTitle">{{user?.email}}</h4> -->
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <strong class="modal-title" style="float: right;" id="exampleModalLongTitle">User
+                                Name</strong>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <h4 class="modal-title" id="exampleModalLongTitle">{{logedinUserDetails?.userEmail}}</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" (click)="logout()" data-dismiss="modal" class="btn btn-primary">Log
+                        out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<router-outlet></router-outlet>
+
+<div class="footer-container">
+    <div class="footer-content">
+        <app-footer></app-footer>
+    </div>
+</div>

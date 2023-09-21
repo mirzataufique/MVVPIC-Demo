@@ -1,0 +1,47 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+.column img{
+    height: 95%;
+    width: 85%;
+}
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.image-data {
+    padding: 20px;
+}
+.bd-example-modal-lg{
+    object-fit: contain;
+    
+}
+
+.questionFormHeader {
+    background-color: #213d77;
+    padding-top: 10px;
+    border-radius: 5px 5px 0px 0px;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.questionFormHeader h2 {
+    text-align: center;
+}
+
+.image-galary-container{
+    padding-top: 5px;
+}

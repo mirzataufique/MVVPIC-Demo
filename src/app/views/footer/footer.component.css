@@ -1,0 +1,11 @@
+.social-media-icon{
+    height: 30px;
+    width: 51px;
+}
+.tw-ic{
+    cursor: pointer;
+}
+.tw-ic :hover{
+    height: 44px;
+}
+
