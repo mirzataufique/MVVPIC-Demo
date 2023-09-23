@@ -57,7 +57,7 @@ export class HomepageComponent implements OnInit {
   adminDashBoard :Boolean;
   
   ngOnInit() {
-    console.log("hiii",window.location.href)
+    console.log(window.location.href)
     if(window.location.href === 'http://localhost:4200/home'){
         this.HideimgSlidder = false;
     }else{

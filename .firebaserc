@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "mvvpic-up65"
-  }
+    "default": "mvvpic-sk-nagar",
+    "mvvpic-sk-nagar": "mvvpic-sk-nagar"
+  },
+  "targets": {},
+  "etags": {}
 }

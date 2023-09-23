@@ -3,18 +3,30 @@ form-control {
     font-weight: normal;
     font-size: 13px;
 }
-
-
-
-.navbar-header.col {
-    padding: 0 !important;
-    margin-left: 5%;
+.navbar-collapse {
+    /* position: fixed; */
+    top: 54px;
+    left: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    z-index: 700;
+    transition: all 0.4s ease;
+    display: block;
+    background-color: #213d77;
 }
 
-html,
-body {
-    height: auto;
-    /* padding-bottom:5%; */
+.navbar-collapse.collapsing {
+    height: auto !important;
+    margin-left: 50%;
+    left: 50%;
+    transition: all 0.2s ease;
+}
+
+.navbar-collapse.show {
+    left: 0;
+    position: absolute;
 }
 
 .logedButton {
@@ -94,21 +106,6 @@ body {
     box-shadow: none
 }
 
-.search-box .input-group-addon {
-    min-width: 35px;
-    border: none;
-    background: transparent;
-    position: absolute;
-    right: 0;
-    z-index: 9;
-    padding: 7px;
-    /* height: 100%; */
-}
-
-.search-box i {
-    color: #a0a5b1;
-    font-size: 19px;
-}
 
 .navbar .nav .btn-primary,
 .navbar .nav .btn-primary:active {
@@ -159,12 +156,6 @@ body {
     margin-top: 8px;
     margin-bottom: 8px;
 }
-
-.navbar ul.nav li.open>a.get-started-btn {
-    /* color: #fff; */
-    background: #31bfb1 !important;
-}
-
 .navbar .dropdown-menu {
     border-radius: 1px;
     border-color: #e5e5e5;
@@ -172,10 +163,6 @@ body {
     background-color: #213d77;
 }
 
-.navbar .nav .dropdown-menu li {
-    color: #999;
-    font-weight: normal;
-}
 
 .navbar .nav .dropdown-menu li a,
 .navbar .nav .dropdown-menu li a:hover,
@@ -315,7 +302,7 @@ body {
         margin-left: 30px;
     }
     .navbar-collapse {
-        position: absolute;
+        /* position: relative; */
         top: 54px;
         left: 100%;
         padding-left: 15px;
@@ -366,10 +353,10 @@ body {
 @media screen and (max-width: 480px) {
     .imgDiv {
         height: 152px;
-        background-color: olive;
+        /* background-color: olive; */
     }
     .navbar-collapse {
-        position: absolute;
+        /* position: fixed; */
         top: 54px;
         left: 100%;
         padding-left: 15px;
@@ -380,9 +367,9 @@ body {
         transition: all 0.4s ease;
         display: block;
         background-color: #213d77;
-    }
+    } 
 
-    .navbar-collapse.collapsing {
+   .navbar-collapse.collapsing {
         height: auto !important;
         margin-left: 50%;
         left: 50%;
@@ -391,6 +378,7 @@ body {
 
     .navbar-collapse.show {
         left: 0;
+        position: absolute;
     }
 }
 
@@ -426,8 +414,8 @@ img {
 .sticky {
   position: fixed;
   /* top: 50px; 
-} 
-*/
+}  */
+
 form-control {
     box-shadow: none;
     font-weight: normal;
@@ -766,7 +754,7 @@ body {
         max-height: 100%;
     }
     .navbar-collapse {
-        position: absolute;
+        /* position: relative; */
         top: 54px;
         left: 100%;
         padding-left: 15px;
@@ -788,6 +776,7 @@ body {
 
     .navbar-collapse.show {
         left: 0;
+        position: absolute;
     }
 }
 
@@ -807,7 +796,7 @@ body {
 
     }
      .navbar-collapse {
-        position: absolute;
+        /* position: fixed; */
         top: 54px;
         left: 100%;
         padding-left: 15px;
@@ -829,6 +818,7 @@ body {
 
     .navbar-collapse.show {
         left: 0;
+        position: absolute;
     }
 }
 
@@ -914,54 +904,6 @@ marquee {
 }
 
 
-/* =============>header fix */
-/* .fixed-header {
-  position: fixed;
-  z-index:999;
-  height: auto;
-  width:100%;
-  margin-top:none;
-}
-
-#frugalmap {
-  height: 300px;
-  width: 100%;
-  top: 50px;
-  position: relative;
-}
-
-.mat-elevation-z5 {
-  position: relative;
-}
-
-.sticky {
-  position: fixed;
-  /* top: 50px; 
-} 
-*/
-
-/* .box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 150px;
-    height: 150px;
-    background-color: lime;
-    border-radius: 10px;
-    font-size: 20px;
-    color: blue;
-    transition: all 500ms linear;
-   }
-   .box1:hover {
-    /*   Rotate 90 degrees clockwise */
-/* transform: rotate(90deg); */
-/* }  */
-/* .navbar-toggler-icon{
-       border-color: rgb(253, 253, 253);
-       color: rgb(253, 253, 253);
-   } */
-
 .navbar-light .navbar-toggler {
     color: none !important;
     border-color: none !important;
@@ -980,7 +922,7 @@ marquee {
 
 @media (max-width: 992px) {
     .navbar-collapse {
-        position: absolute;
+        position: fixed;
         top: 54px;
         left: 100%;
         padding-left: 15px;
@@ -1002,6 +944,7 @@ marquee {
 
     .navbar-collapse.show {
         left: 0;
+        position: absolute;
     }
     .collapse {
         &:not(.show) {
@@ -1009,6 +952,12 @@ marquee {
         }
       }
 }
+
+
+
+
+
+
 
 
 
