@@ -1,13 +1,17 @@
-
-.mandiv{
-    padding: 8px;
+.container {
+    margin-top: 10px;
 }
-.details{
-background-color: #fff;
-border: 2px solid grey;
-border-radius: 10%;
-height: 400px;
-width: 300p;
-margin: 10px;
-padding:10px;
+.contentHeader {
+    background-color: #213d77;
+    color: white;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-radius: 5px 5px 0px 0px;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.contentHeader h2 {
+    text-align: center;
 }

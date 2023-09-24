@@ -1,7 +1,38 @@
-
-
 * {
     box-sizing: border-box;
+}
+
+.image-list {
+    margin: auto;
+}
+
+.modal-content {
+    height: auto;
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+.modal-header {
+    height: 10%;
+    background-color: #213d77;
+    color: white;
+}
+
+.close {
+    float: right !important;
+    font-size: 1.9rem !important;
+    font-weight: bold !important;
+    line-height: 1 !important;
+    color: white !important;
+    /* text-shadow: 0 1px 0 #fff; */
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 .column {
@@ -9,10 +40,12 @@
     width: 33.33%;
     padding: 5px;
 }
-.column img{
+
+.column img {
     height: 95%;
     width: 85%;
 }
+
 /* Clearfix (clear floats) */
 .row::after {
     content: "";
@@ -21,11 +54,14 @@
 }
 
 .image-data {
-    padding: 20px;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 14px;
 }
-.bd-example-modal-lg{
+
+.bd-example-modal-lg {
     object-fit: contain;
-    
+
 }
 
 .questionFormHeader {
@@ -42,6 +78,60 @@
     text-align: center;
 }
 
-.image-galary-container{
+.image-galary-container {
     padding-top: 5px;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .modal-content {
+        height: auto;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        height: auto;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+}
+
+@media (max-width: 992px) {
+    .modal-content {
+        height: auto;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, 25%);
+    }
+}
+
+
+
+@media (min-width: 1281px) {
+    .modal-content {
+        height: auto;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .modal-content {
+        height: auto;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, 4%);
+    }
 }
