@@ -8,6 +8,8 @@ import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms
 // import { NGXLogger } from 'ngx-logger';
 import { LoggerService } from '../../../Services/logger.service'
 import { LoaderService } from 'src/app/loader/loader.service';
+import { ValidationService } from 'src/app/Services/validation.service';
+// import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -32,6 +34,8 @@ export class LoginComponent implements OnInit {
     // private socialService: SocialAuthService, 
     private userService: UserService,
     // private logger: NGXLogger,
+    // private toastrService: ToastrService,
+    public validationService: ValidationService,
     private customLogger: LoggerService,
     public loaderService: LoaderService) {
   }
@@ -55,7 +59,7 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('logeninUserDetails', result.user);
           this.loginUserType = sessionStorage.getItem('loginUserType');
           console.log("===>", this.loginUserType)
-          this.routes.navigate(['/home'])
+          this.routes.navigateByUrl('admin/dashboard')
         },
           (error) => {
             console.log(error);

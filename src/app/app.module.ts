@@ -12,7 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { InterceptorService } from './loader/interceptor.service';
 import { DynamicPageComponent } from './views/dynamic-page/dynamic-page.component';
-import { ContactUsComponent } from './views/contact-us/contact-us.component'
+import { ContactUsComponent } from './views/contact-us/contact-us.component';
+// import { ToastrModule } from 'ngx-toastr';
 
 // const google_aouth_client_id: string = "1043334809034-h3gck3cp5c2boggj9hg5dhrl172fr5ms.apps.googleusercontent.com";
 
@@ -22,7 +23,6 @@ import { ContactUsComponent } from './views/contact-us/contact-us.component'
     routingComponent,
     DynamicPageComponent,
     ContactUsComponent
-    
     // NewAdmissionComponent
   ],
   imports: [
@@ -35,6 +35,7 @@ import { ContactUsComponent } from './views/contact-us/contact-us.component'
     RouterModule,
     NgxPaginationModule,
     SocialLoginModule,
+   
     // WavesModule,
     // ButtonsModule,
     // IconsModule,

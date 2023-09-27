@@ -1,0 +1,145 @@
+/*  media quary */
+@media (min-width: 1200px) {
+    .card {
+        display: flex;
+        float: left;
+        margin: 10.5px;
+        width: 10rem;
+        /* padding: 0.5rem; */
+        margin-left: 14px;
+    }
+
+    .card-body {
+        padding: 0.5rem;
+        text-align: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .card-body img {
+        height: 50px;
+    }
+
+    .card-body img :hover {
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        display: flex;
+        float: left;
+        margin: 10.5px;
+        width: 10rem;
+        padding: 0.5rem;
+        margin-left: 14px;
+    }
+
+    .card-body {
+        padding: 0.5rem;
+        text-align: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .card-body img {
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        display: flex;
+        float: left;
+        width: 9rem;
+        margin-left: 13px;
+    }
+
+    .card-body {
+        padding: 0.5rem;
+        text-align: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .card-body img {
+        height: 100px;
+    }
+}
+
+.head-cards-container{
+    display: flex;
+    float: left;
+}
+
+.total-students {
+    background-color: green;
+    margin: 14px;
+    border-radius: 6px;
+    color: #f7f7f7;
+    text-align: center;
+}
+/* .total-students.total-teachers.total-parents p img{
+    height: 50px;
+} */
+.total-students, .total-teachers, .total-parents h2{
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+.total-teachers {
+    background-color: red;
+    margin: 14px;
+    border-radius: 6px;
+    color: #f7f7f7;
+    text-align: center;
+}
+
+.total-parents {
+    background-color: rgb(53, 145, 251);
+    margin: 14px;
+    border-radius: 6px;
+    color: #f7f7f7;
+    text-align: center;
+}
+
+
+
+
+.cards-container {
+    background-color: #f7f7f7;
+    padding: 11px;
+}
+
+.card {
+    display: flex;
+    float: left;
+    width: 10rem;
+    padding: 0.5rem;
+    /* margin-left: 3px; */
+}
+
+/* .card :hover{
+    border : 1px solid green;
+} */
+.card-body {
+    padding: 0.5rem;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card-body img {
+    height: 100px;
+}
+
+.card-body p {
+    color: blue;
+    cursor: pointer;
+    font-size: 18px;
+
+}
+
+.card-body :hover {
+    text-decoration: underline;
+}

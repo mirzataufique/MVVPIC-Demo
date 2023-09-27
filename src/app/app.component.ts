@@ -92,7 +92,11 @@ export class AppComponent {
   signOut(): void {
     this.authService.signOut();
   }
-
+  openNav(){
+    alert(1)
+    
+    document.getElementById("navbar").style.width = "100%";
+  }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();

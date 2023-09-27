@@ -5,7 +5,7 @@ import { MainControllerService } from '../../../Services/mainController.service'
 import { LocalDataSource } from 'ng2-smart-table';
 import { Router } from '@angular/router';
 // import { NGXLogger } from 'ngx-logger';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { FormControl, FormGroup, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-stdreport',
@@ -34,14 +34,17 @@ export class StdreportComponent implements OnInit {
   endDate: any;
   Data: any = [];
   numerOfResult: number;
-  stdReportForm!:UntypedFormGroup;
+  stdReportForm!:FormGroup;
+  filterData: any[]
+  std_id:string;
+
   ngOnInit() {
 
-    this.stdReportForm = new UntypedFormGroup({
-      std_id : new UntypedFormControl(''),
-      std_name : new UntypedFormControl(''),
-      startDate : new UntypedFormControl(''),
-      endDate : new UntypedFormControl(''),
+    this.stdReportForm = new FormGroup({
+      std_id : new FormControl(''),
+      std_name : new FormControl(''),
+      startDate : new FormControl(''),
+      endDate : new FormControl(''),
     })
 
     console.log("inside student Component")
@@ -53,7 +56,7 @@ export class StdreportComponent implements OnInit {
     })
     var dt = new Date();
   }
-  std_id;
+ 
 
   filter(event:any) {
     console.log("------=", this.std_id);
@@ -62,7 +65,7 @@ export class StdreportComponent implements OnInit {
       this.Data.push(result);
     });
   };
-  filterData: any[]
+  
   search(term: string) {
     console.log("search=====>");
 
@@ -92,7 +95,7 @@ export class StdreportComponent implements OnInit {
 
   }
   movetoAdmission() {
-    this.router.navigate(['/admission']);
+    this.router.navigateByUrl('admin/admission');
   }
 
   addedDay = function addDays() {

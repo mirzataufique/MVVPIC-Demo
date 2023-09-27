@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { StdreportComponent } from './stdreport/stdreport.component';
 import { NewAdmissionComponent } from './new-admission/new-admission.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FacultyComponent } from './faculty/faculty.component';
 
 
 
@@ -44,6 +45,12 @@ const routes: Routes = [
     canActivate: [AuthService],
     data: ['ADMIN'],
     component: DashboardComponent
+  },
+  {
+    path: 'add-faculty',
+    canActivate: [AuthService],
+    data: ['ADMIN'],
+    component: FacultyComponent
   },
 ];
 

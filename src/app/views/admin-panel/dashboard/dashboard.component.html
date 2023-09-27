@@ -1,11 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<div class="container">
+    <h1>Dashboards</h1>
+    <hr style="border-top: 1.5px solid #eee; width:100%;">
+    <form method="POST" [formGroup]="dashboardForm">
+        <div class="row">
+            <div class="head-cards-container col-sm-12 form-group">
+                <div class="col-sm-4">
+                    <div class="total-students">
+                        <h2>4000</h2>
+                        <p class="card-text"> <img src="/assets/icons/icons8-people-3d-fluency-96.png" alt="new-icon"
+                                style="height: 42px;" class="w-10 h-10"> Total Students</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="total-teachers">
+                        <h2>1800</h2>
+                        <p class="card-text"> <img src="/assets/icons/icons8-people-3d-fluency-96.png" alt="new-icon"
+                                style="height: 42px;" class="w-10 h-10"> Total Teacher</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="total-parents">
+                        <h2>300</h2>
+                        <p class="card-text"> <img src="/assets/icons/icons8-people-3d-fluency-96.png" alt="new-icon"
+                                style="height: 42px;" class="w-10 h-10">
+                            Total Parents</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <strong>Quick Icons</strong>
+            <br>
+            <div class="cards-container col-sm-12 form-group">
+                <div class="col-sm-12">
+                    <input class="form-control border-end-0 border" type="search" value="" placeholder="Search..."
+                        id="example-search-input">
+                    <!-- <span class="input-group-append">
+                            <i class="fa fa-search"></i>
+                        </span> -->
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/assets/icons/icons8-people-3d-fluency-96.png" alt="new-icon" class="w-10 h-10">
+                        <p class="card-text" (click)="navigateTo('report')">Students</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/assets/icons/icons8-homework-64.png" alt="Homework-icon" class="w-10 h-10">
+                        <p class="card-text">Home Work</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/assets/icons/icons8-result-96.png" alt="new-icon" class="w-10 h-10">
+                        <p class="card-text">Result</p>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/assets/icons/icons8-calendar-color-96.png" alt="new-icon">
+                        <p class="card-text">Calendar</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/assets/icons/icons8-list-cute-clipart-96.png" alt="new-icon">
+                        <p class="card-text">Class List</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/assets/icons/icons8-graduation-hat-65.png" alt="new-icon">
+                        <p class="card-text">Exams</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/assets/icons/icons8-star-50.png" alt="new-icon">
+                        <p class="card-text">Exams Marks</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/assets/icons/icons8-payment-94.png" alt="new-icon">
+                        <p class="card-text">Payment</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/assets/icons/icons8-accounting-96.png" alt="new-icon">
+                        <p class="card-text">Accounting</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/assets/icons/icons8-news.svg" alt="new-icon">
+                        <p class="card-text">News</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/assets/icons/icons8-configulation-others-96.png" alt="new-icon" class="w-10 h-10">
+                        <p class="card-text">Configurations</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/assets/icons/icons8-settings.svg" alt="new-icon" class="w-10 h-10">
+                        <p class="card-text">Settings</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </form>
+</div>

@@ -285,31 +285,6 @@ img {
     /* remove extra space below image */
 }
 
-/* =============>header fix */
-/* .fixed-header {
-  position: fixed;
-  z-index:999;
-  height: auto;
-  width:100%;
-  margin-top:none;
-}
-
-#frugalmap {
-  height: 300px;
-  width: 100%;
-  top: 50px;
-  position: relative;
-}
-
-.mat-elevation-z5 {
-  position: relative;
-}
-
-.sticky {
-  position: fixed;
-  /* top: 50px; 
-}  */
-
 form-control {
     box-shadow: none;
     font-weight: normal;
@@ -323,13 +298,12 @@ form-control {
 
 .navbar-header.col {
     padding: 0 !important;
-    margin-left: 5%;
+    margin-left: 1%;
 }
 
 html,
 body {
     height: auto;
-    /* padding-bottom:5%; */
 }
 
 .logedButton {
@@ -343,17 +317,8 @@ body {
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    border-radius: 2px;
+    border-radius: 50%;
 }
-
-/* .navbar {
-    background: #213d77;
-    color: white;
-    padding-left: 16px;
-    padding-right: 16px;
-    border-bottom: 1px solid #dfe3e8;
-    border-radius: 0;
-} */
 
 .nav-link img {
     border-radius: 50%;
@@ -363,12 +328,6 @@ body {
     float: left;
     margin-right: 10px;
 }
-
-/* .navbar .navbar-brand, .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
-    padding-left: 0;
-    font-size: 20px;
-    padding-right: 50px;
-} */
 
 .navbar .navbar-brand b {
     font-weight: bold;
@@ -390,11 +349,7 @@ body {
 }
 
 .navbar .nav li :hover {
-    /* color: #888; */
-    /* color: rgb(180, 5, 5); */
-    /* font-size: 1.1rem;*/
     font-weight: 600;
-    /* font-size: 1.1rem; */
     color: rgb(255, 115, 8);
 }
 
@@ -427,8 +382,6 @@ body {
 
 .navbar .nav .btn-primary,
 .navbar .nav .btn-primary:active {
-    /* color: white; */
-    /* background: darkgreen; */
     padding-top: 8px;
     padding-bottom: 4px;
     vertical-align: middle;
@@ -452,15 +405,9 @@ body {
 .navbar .dropdown-item i {
     font-size: 16px;
     min-width: 22px;
-    /* background-color: none; */
 }
 
-/* .dropdown-item.active, .dropdown-item:active{
-    background-color: none;
-} */
 .navbar .dropdown-item:active {
-    /* background-color: #21d192 !important; */
-    /* color: red; */
     color: none;
 }
 
@@ -482,9 +429,7 @@ body {
 
 .navbar .dropdown-menu {
     border-radius: 1px;
-    /* border-color: #e5e5e5; */
     box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
-    /* background-color: #213d77; */
 }
 
 .navbar .nav .dropdown-menu li {

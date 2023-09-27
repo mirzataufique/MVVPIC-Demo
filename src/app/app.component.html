@@ -4,7 +4,7 @@
 <head>
     <script type="text/javascript">
         // Prevent dropdown menu from closing when click inside the form
-        $(document).on("click", ".navbar-right .dropdown-menu", function (e) {
+        $(document).on("click", ".navbar-left .dropdown-menu", function (e) {
             e.stopPropagation();
         });
     </script>
@@ -13,7 +13,10 @@
 <body>
     <div class="fixed-header">
         <nav class="navbar navbar-default navbar-expand-lg">
-            <div class="navbar-header d-flex col">
+            <span style="color: white; color: white; margin-top: 10px; font-size: 12px;" *ngIf="loginProfile">
+                {{currentDateTime | date: "HH:mm:ss"}}
+            </span>
+            <div class="navbar-header d-flex col" routerLink="/home">
                 <a class="waviy navbar-brand">
                     <span style="--i:1">M</span>
                     <span style="--i:2">V</span>
@@ -33,19 +36,26 @@
 
 
                 <!-- <a class="navbar-brand" routerLink="/home">MVVPI<b>COLLEGE</b></a> -->
-                <button type="button" data-target="#navbarCollapse" data-toggle="collapse"
-                    class="navbar-toggle navbar-toggler custom-toggler ml-auto">
-                    <!-- <span class="navbar-toggler-icon"></span> -->
-                    <span class="hambegr-container"><img src="/assets/icons/icons8-menu.svg" alt="hamberg-icon"
-                            class="nav-hamberg-icon"></span>
-                </button>
-            </div>
 
-            <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+                <!-- <button type="button" data-target="#navbarCollapse" data-toggle="collapse"
+                    class="navbar-toggle navbar-toggler custom-toggler ml-auto" (click)="openNav()">
+                    <span class="hambegr-container">
+                        <img src="/assets/icons/icons8-menu.svg" alt="hamberg-icon" class="nav-hamberg-icon">
+                    </span>
+                </button> -->
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="hambegr-container">
+                    <img src="/assets/icons/icons8-menu.svg" alt="hamberg-icon" class="nav-hamberg-icon">
+                </span>
+            </button>
+            <div id="navbarSupportedContent" class="collapse navbar-collapse justify-content-start">
+
                 <ul class="nav navbar-nav">
                     <li class="nav-item"><a routerLinkActive="active" routerLink="/home" class="nav-link">HOME</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" *ngIf="!loginProfile">
                         <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">ABOUT<b
                                 class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -53,15 +63,21 @@
                             <li><a class="dropdown-item" routerLink="/about-staff">About Staff </a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a routerLinkActive="active" routerLink="/academics"
-                            class="nav-link">ACADEMICS</a>
+                    <li class="nav-item dropdown">
+                        <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">ACADEMICS<b
+                                class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a routerLink="/about-college" class="dropdown-item">Inter College</a></li>
+                            <li><a class="dropdown-item" routerLink="/about-staff">Junior College </a></li>
+                            <li><a class="dropdown-item" routerLink="/about-staff">English Medium </a></li>
+                            <li><a class="dropdown-item" routerLink="/about-staff">Other Cources</a></li>
+                        </ul>
                     </li>
+
                     <li class="nav-item"><a routerLinkActive="active" routerLink="/gallery"
                             class="nav-link">ACTIVITIES</a>
                     </li>
-                    <li class="nav-item"><a routerLinkActive="active" routerLink="/contact-us" class="nav-link">CONTACT
-                            US</a>
-                    </li>
+
 
                     <li class="nav-item dropdown" *ngIf="adminMenus === true">
                         <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="">MANAGE<b
@@ -70,7 +86,8 @@
                             <li><a routerLink="/admin/admission" routerLinkActive="active" class="dropdown-item">New
                                     Admission</a>
                             </li>
-                            <li><a class="dropdown-item" routerLink="/faculty" routerLinkActive="active">Faculty</a>
+                            <li><a class="dropdown-item" routerLink="/admin/add-faculty"
+                                    routerLinkActive="active">Faculty</a>
                             </li>
                         </ul>
                     </li>
@@ -82,7 +99,7 @@
                             <li><a class="dropdown-item" routerLink="/admin/fcltreport">Faculty Report</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown" *ngIf="adminMenus === true">
+                    <li class="nav-item dropdown" *ngIf="!loginProfile">
                         <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="">ADMISSION & EXAMS<b
                                 class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -91,6 +108,10 @@
                             </li>
                             <li><a class="dropdown-item">Exams</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item" *ngIf="!loginProfile"><a routerLinkActive="active" routerLink="/contact-us"
+                            class="nav-link">CONTACT
+                            US</a>
                     </li>
 
                 </ul>
@@ -111,9 +132,6 @@
                 <ul class="nav navbar-nav navbar-right ml-auto">
                 </ul>
                 <ul class="nav navbar-nav navbar-right ml-auto" *ngIf="loginProfile">
-                    <span style="color: white; color: white; margin-top: 15px; font-size: 12px;">
-                        {{currentDateTime | date: "HH:mm:ss"}}
-                    </span>
                     <li class="nav-item"> <button type="button" class="logedButton" data-toggle="modal"
                             data-target="#UserDetails">
                             <!-- <img style="border-radius: 3rem;height: 40px;width: auto;" src="{{ user?.photoUrl }}"> -->
@@ -139,7 +157,6 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    Last Login : {{currentDateTime | date: "HH:mm:ss"}}
                     <img style="border-radius: 3rem;height: 40px;width: auto;" src={{logedinUserDetails?.photoUrl}}>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -147,8 +164,6 @@
 
                 </div>
                 <div class="modal-body">
-                    <!-- <img style="border-radius: 3rem;height: 40px;width: auto;" src="{{ user?.photoUrl }}">
-          <h4 class="modal-title" id="exampleModalLongTitle">{{user?.email}}</h4> -->
                     <div class="row">
                         <div class="col-sm-6 form-group">
                             <strong class="modal-title" style="float: right;" id="exampleModalLongTitle">User

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService}  from '../../../Services/user.service';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-fltreport',
@@ -12,9 +13,25 @@ export class FltreportComponent implements OnInit {
   constructor(private userService:UserService,private router:Router,) { }
 
   // logedInUser:any=[];
+  facultyReportForm:FormGroup;
   userData:any []
   numerOfResult;
+  tData: boolean = false;
+
+
   ngOnInit(): void {
+    this.facultyReportForm = new FormGroup({
+      faId: new FormControl(''),
+      faName: new FormControl(''),
+      faDob: new FormControl(''),
+      faDepartment: new FormControl(''),
+      faMobile: new FormControl(),
+      startDate : new FormControl(''),
+      endDate : new FormControl(''),
+    })
+
+
+
     this.userService.getUser().subscribe((result)=>{
       this.userData = result;
       console.log('result', this.userData)
@@ -22,7 +39,6 @@ export class FltreportComponent implements OnInit {
     })
     
   }
-  tData: boolean = false;
   delete(value){
     console.log("inside Delete-->",value);
     let index = this.userData.indexOf(value);
@@ -34,7 +50,10 @@ export class FltreportComponent implements OnInit {
     })
   }
   movetoAddFaculty(){
-    this.router.navigate(['/faculty']);
+    // this.router.navigate(['/faculty']);
+    this.router.navigateByUrl('admin/add-faculty');
   }
+
+  search(event:any){}
 
 }

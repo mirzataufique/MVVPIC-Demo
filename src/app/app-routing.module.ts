@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomepageComponent } from './views/homepage/homepage.component';
 import { AuthService } from './Services/auth.service';
-import { FacultyComponent } from './views/faculty/faculty.component';
+// import { FacultyComponent } from './views/faculty/faculty.component';
 
 import { FooterComponent } from './views/footer/footer.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
@@ -76,12 +76,12 @@ const routes: Routes = [
     data: ['ADMIN'],
     component: StdreportComponent
   },
-  {
-    path: 'faculty',
-    canActivate: [AuthService],
-    data: ['ADMIN'],
-    component: FacultyComponent
-  },
+  // {
+  //   path: 'faculty',
+  //   canActivate: [AuthService],
+  //   data: ['ADMIN'],
+  //   component: FacultyComponent
+  // },
   
   {
     path: 'about-college',
